@@ -39,6 +39,7 @@ i=0
 timestamp = 0
 
 while True:
+	lectura = sensor.read()
 	if lectura.is_valid():
 		Temperatura = lectura.temperature
 		Humitat = lectura.humidity
