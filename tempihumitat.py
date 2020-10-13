@@ -1,20 +1,23 @@
-# importar entrada sortida de GP i temps
 import RPi.GPIO as GPIO
-import time
+import dht11 as dht11
 
-#seleccionar el mode de entrada BOARD
-GPIO.setmode(GPIO.BOARD)
-#pin on enxufarem el circuit de sortida
 pin = 7
-#temps que tindrem el let en cada posicio
-sleeptime = 1
-#al pin que seleccionem el fem de sortida
-GPIO.setup(pin, GPIO.OUT)
 
-while True:
-	GPIO.output(pin, GPIO.HIGH)
-	time.sleep(sleeptime)
-	print("let on")
-	GPIO.output(pin, GPIO.LOW)
-	time.sleep(sleeptime)
-	print("let off")
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(pin, GPIO.OUT)
+GPIO.setwarnings(False)
+
+sensor = dht11.DHT11(pin)
+
+lectura = sensor.read() 
+
+if lectura.is_valid():
+	Temperatura = lectura.temperature
+	Humitat = lectura.humidity
+		
+	print("Temperatura: %-3.1f C" % Temperatura)
+	print("Temperatura: %-3.1f C" % Humitat)
+	
+else	
+	print("Error: %d" % lectura.error_code)
+		
