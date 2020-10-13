@@ -35,11 +35,8 @@ client = cayenne.client.CayenneMQTTClient()
 # For a secure connection use port 8883 when calling client.begin:
 client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID, port=1883, loglevel=logging.INFO)
 
-i=0
-timestamp = 0
-
 while True:
-	lectura = sensor.read()
+    lectura = sensor.read()
 	if lectura.is_valid():
 		Temperatura = lectura.temperature
 		Humitat = lectura.humidity
@@ -50,9 +47,7 @@ while True:
 		client.loop()
 		client.virtualWrite(0,Temperatura)
 		client.virtualWrite(1,Humitat)
-		
-	except KeyboardInterrupt:
-        break
-   
-        
-sys.exit() 
+	else :	
+       	 	print("Error: %d" % lectura.error_code)  
+        	client.virtualWrite(0,lectura.error_code)        
+      
