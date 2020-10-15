@@ -15,10 +15,13 @@ while True:
 	client.loop()
 	read_serial=ser.readline()
 	print(read_serial)
-	if ( read_serial.contains("Temperature:")):
-		Temperatura = read_serial.replace("Temperature:", "")
-	if ( read_serial.contains("Humidity:")):
-		Humitat = read_serial.replace("Humidity:", "")
+	#if ( read_serial.contains("Temperature:")):
+	#	Temperatura = read_serial.replace("Temperature:", "")
+	#if ( read_serial.contains("Humidity:")):
+	#	Humitat = read_serial.replace("Humidity:", "")
+		
+	Temperatura = read_serial
+	Humitat = read_serial
 	# print("Temperatura: %-3.1f C" % Temperatura)
 	# print("Humitat: %-3.1f C" % Humitat)
 	client.virtualWrite(0,Temperatura)
