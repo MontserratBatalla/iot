@@ -15,9 +15,9 @@ while True:
 	client.loop()
 	read_serial=ser.readline()
 	print(read_serial)
-	if ( read_serial.find("Temperature:")
+	if ( read_serial.find("Temperature:"):
 		Temperatura = read_serial.replace("Temperature:", "")
-	if ( read_serial.find("Humidity:")
+	if ( read_serial.find("Humidity:"):
 		Humitat = read_serial.replace("Humidity:", "")
 	# print("Temperatura: %-3.1f C" % Temperatura)
 	# print("Humitat: %-3.1f C" % Humitat)
