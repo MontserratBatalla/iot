@@ -17,7 +17,7 @@ while True:
 	print(read_serial)
 	Temperatura = read_serial
 	Humitat = read_serial
-	print("Temperatura: %-3.1f C" % Temperatura)
-	print("Humitat: %-3.1f C" % Humitat)
+	//print("Temperatura: %-3.1f C" % Temperatura)
+	//print("Humitat: %-3.1f C" % Humitat)
 	client.virtualWrite(0,Temperatura)
 	client.virtualWrite(1,Humitat)
