@@ -15,11 +15,14 @@ while True:
 	client.loop()
 	read_serial=ser.readline()
 	print(read_serial)
-	Temperatura = read_serial
-	Humitat = read_serial
+	if ( read_serial.find("Temperature:")
+		Temperatura = read_serial.replace("Temperature:", "")
+	if ( read_serial.find("Humidity:")
+		Humitat = read_serial.replace("Humidity:", "")
 	# print("Temperatura: %-3.1f C" % Temperatura)
 	# print("Humitat: %-3.1f C" % Humitat)
 	client.virtualWrite(0,Temperatura)
 	client.virtualWrite(1,Humitat)
 time.sleep(10)	
 	
+# https://diyi0t.com/arduino-to-raspberry-pi-serial-communication/
