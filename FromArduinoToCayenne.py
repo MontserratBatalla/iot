@@ -21,3 +21,5 @@ while True:
 	# print("Humitat: %-3.1f C" % Humitat)
 	client.virtualWrite(0,Temperatura)
 	client.virtualWrite(1,Humitat)
+time.sleep(10)	
+	
