@@ -43,7 +43,7 @@ while True:
 		Humitat = lectura.humidity
 
 		print("Temperatura: %-3.1f C" % Temperatura)
-		print("Temperatura: %-3.1f C" % Humitat)
+		print("Humitat: %-3.1f C" % Humitat)
 		client.virtualWrite(0,Temperatura)
 		client.virtualWrite(1,Humitat)
 	else :
