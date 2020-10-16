@@ -21,7 +21,7 @@ while True:
 	#	Humitat = read_serial.replace("Humidity:", "")
 	stringFromSerial = str (read_serial)	
 	if ("Temperature" in stringFromSerial):
-		Temperatura = (stringFromSerial.replace("Temperature: ","")).replace("\n","")
+		Temperatura = read_serial
 		client.virtualWrite(0,Temperatura)
 	if ("Humidity" in stringFromSerial):
 		Humitat = read_serial
