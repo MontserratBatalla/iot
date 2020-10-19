@@ -1,3 +1,5 @@
+//Code inspired in https://www.luisllamas.es/arduino-ethernet-shield-w5100/
+
 #include <time.h>
 #include <Ethernet.h>
 #include <CayenneMQTTEthernet.h>
