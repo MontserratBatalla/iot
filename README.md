@@ -2,6 +2,8 @@
 IOT code
 
 Raspberry: 
+
+
   Llegir let raspberry - ledIO4.py 
   
   Llegir temperatura i humitat - tempihumitat.py
@@ -11,6 +13,8 @@ Raspberry:
   
 
 Arduino:
+
+
   Imprimir pel port Serie temperatura i humitat- TempreaturaAR.ino
   
   Generar un numero random - RandomAR.ino
@@ -24,6 +28,8 @@ Arduino:
   
   
  Arduino + Raspberry :
+ 
+ 
   Capturar temperatura i humitat a un arduino i enviar al serie de la Raspberry  - TempHumToRaspberryAR.ino
   
   Rebre dades del port un arduino conectat al port serie i enviar a Cayenne - FromArduinoToCayenne.py 
